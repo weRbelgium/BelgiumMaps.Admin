@@ -27,7 +27,7 @@ The belgium-latest.osm.pbf file was imported with osm2pgsql in PostGIS and conve
 These administrative boundaries are made available in the BE_OSM_ADMIN dataset which can be found inside the package.
 
 ```
-library(BelgiumMapsOpenStreetMap)
+library(BelgiumMaps.Admin)
 library(sp)
 data(BE_OSM_ADMIN) 
 plot(BE_OSM_ADMIN)
