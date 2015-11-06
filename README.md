@@ -17,7 +17,7 @@ devtools::install_github("jwijffels/BelgiumMaps.Admin", build_vignettes = TRUE)
 vignette("BelgiumMaps_AdministrativeAreas", package = "BelgiumMaps.Admin")
 ```
 
-## Documentation of the BelgiumMapsOpenStreetMap package
+## Documentation of the BelgiumMaps.Admin package
 
 This package contains data extracted from http://download.geofabrik.de/europe/belgium.html on 2015/11/03 with OpenStreetMap data up to 2015-11-02T22:22:02Z.
 
@@ -67,6 +67,6 @@ leaflet(myenrichedmap) %>%
 ## More geospatial data from OpenStreetMaps
 
 The BelgiumMaps.OpenStreetMap package contains more datasets which can be used alongside the administrative boundaries. Namely **landuse, natural, places, points, railways, roads and waterways**. 
-This package can be found at https://github.com/jwijffels/BelgiumMaps.OpenStreetMaps
+This package can be found at https://github.com/jwijffels/BelgiumMaps.OpenStreetMap
 
 ![OSM example](inst/extdata/img/osm_industrial.png)
