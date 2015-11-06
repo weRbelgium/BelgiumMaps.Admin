@@ -2,3 +2,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 dev
+.gitignore
+.Rhistory
+.Rproj.user
+.git

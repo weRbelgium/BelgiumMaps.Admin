@@ -21,17 +21,22 @@ opts_chunk$set(out.extra='style="display:block; margin: auto"', fig.align="cente
 Introduction
 ------------
 
-The  **BelgiumMaps.Admin** package contains maps of Belgium extracted from OpenStreetMap
+The  **BelgiumMaps.Admin** package contains maps of administrative boundaries of Belgium extracted from OpenStreetMap. This data is available in the BE_OSM_ADMIN object.
 
-
-Visualization
-----------------------------
-This package contains administrative boundaries at different levels.
-
-```{r basic plots}
+```{r dataset}
 library(sp)
 library(BelgiumMaps.Admin)
 data(BE_OSM_ADMIN)
+class(BE_OSM_ADMIN)
+str(BE_OSM_ADMIN@data)
+```
+
+
+Visualisation
+----------------------------
+This package contains administrative boundaries at different levels (national, regional, provinces, districts, municipalities and sections).
+
+```{r basic plots}
 plot(BE_OSM_ADMIN)
 plot(subset(BE_OSM_ADMIN, admin.level %in% "2"), main = "National")
 plot(subset(BE_OSM_ADMIN, admin.level %in% "4"), main = "Regions")
@@ -45,28 +50,6 @@ plot(subset(BE_OSM_ADMIN, admin.level %in% "9"), main = "NISsections")
 
 Integrate with BelgiumStatistics
 ----------------------------
-The data also contains NIS codes which can be used to link against the data in the BelgiumStatistics package. This package can be found at https://github.com/jwijffels/BelgiumStatistics
+The data also contains NIS codes which can be used to link against the data in the BelgiumStatistics package. This package can be found at https://github.com/jwijffels/BelgiumStatistics. Examples about this can be found in that package.
 
-```{r integrated with belgiumstatistics, eval=FALSE}
-library(BelgiumStatistics)
-library(BelgiumMaps.Admin)
-library(data.table)
-library(leaflet)
 
-data(BE_OSM_ADMIN, package = "BelgiumMaps.Admin")
-data(TF_SOC_POP_STRUCT_2015, package = "BelgiumStatistics")
-
-x <- as.data.table(TF_SOC_POP_STRUCT_2015)
-x <- x[, list(MS_POPULATION = sum(MS_POPULATION),
-              Females = 100 * sum(MS_POPULATION[CD_SEX == "F"]) / sum(MS_POPULATION)),
-       by = list(CD_MUNTY_REFNIS, TX_MUNTY_DESCR_NL, TX_MUNTY_DESCR_FR)]
-
-mymap <- subset(BE_OSM_ADMIN, !is.na(tag.ref.ins))
-myenrichedmap <- merge(mymap, x, by.x = "tag.ref.ins", by.y = "CD_MUNTY_REFNIS", all.x=TRUE, all.y=FALSE)
-myenrichedmap <- subset(myenrichedmap, !is.na(Females))
-pal <- colorNumeric(palette = "Blues", domain = myenrichedmap$Females)
-leaflet(myenrichedmap) %>%
-  addTiles() %>%
-  addPolygons(stroke = FALSE, smoothFactor = 0.2, fillOpacity = 0.85, color = ~pal(Females)) %>%
-  addPopups(lng = 4.366354, lat = 50.86619, popup="BNOSAC offices<br/>www.bnosac.be")
-```
