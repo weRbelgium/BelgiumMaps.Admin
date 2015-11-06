@@ -1,13 +1,13 @@
 Package: BelgiumMaps.Admin
 Type: Package
 Title: Maps with administrative boundaries (national, regions, provinces, districts, municipalities, nissections) of Belgium extracted from OpenStreetMap
-Description: Maps with administrative boundaries (national, regions, provinces, districts, municipalities, nissections) of Belgium extracted from OpenStreetMap
+Description: 'BelgiumMaps.Admin' contains maps with administrative boundaries (national, regions, provinces, districts, municipalities, nissections) of Belgium extracted from OpenStreetMap.
 Maintainer: Jan Wijffels <jwijffels@bnosac.be>
 Author: see file AUTHORS
 License: see file LICENSE
 Copyright: BNOSAC <info@bnosac.be>, Geofabrik GmbH and OpenStreetMap Contributors
 Version: 1.0
-URL: http://www.bnosac.be, http://download.geofabrik.de/europe/belgium.html
+URL: https://github.com/jwijffels/BelgiumMaps.Admin, http://www.bnosac.be, http://download.geofabrik.de/europe/belgium.html
 Date: 2015-11-05
 VignetteBuilder: knitr
 Depends:
@@ -16,8 +16,5 @@ Imports:
   stringi
 Suggests:
   sp,
-  data.table,
-  leaflet,
-  BelgiumStatistics,
   knitr
 
