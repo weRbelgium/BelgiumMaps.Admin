@@ -72,6 +72,21 @@ This package can be found at https://github.com/jwijffels/BelgiumMaps.OpenStreet
 ![OSM example](inst/extdata/img/osm_industrial.png)
 
 
+## Need the administrative boundaries in another format
+
+```
+require(BelgiumMaps.Admin)
+data(BE_OSM_ADMIN)
+
+## As a shapefile
+require(maptools)
+writePolyShape(BE_OSM_ADMIN, fn = "BE_OSM_ADMIN")
+
+## As a geojson
+require(geojsonio)
+geojson_write(BE_OSM_ADMIN, file = "BE_OSM_ADMIN.geojson", geometry = "polygon")
+```
+
 ## Support in geospatial analysis
 
 Need support in geospatial analysis or geospatial mapping. 
