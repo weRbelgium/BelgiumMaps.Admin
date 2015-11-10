@@ -58,5 +58,7 @@ More OpenStreetMap data about Belgium
 Next to this data with administrative boundaries based on OpenStreetMap, another package called BelgiumMaps.OpenStreetMap is available which contains geospatial data of Belgium regarding landuse, natural, places, points, railways, roads and waterways, extracted from OpenStreetMap. More information: https://github.com/jwijffels/BelgiumMaps.OpenStreetMap
 
 
-
-
+Support in geospatial analysis
+----------------------------
+Need support in geospatial analysis or geospatial mapping. 
+Contact BNOSAC: http://www.bnosac.be

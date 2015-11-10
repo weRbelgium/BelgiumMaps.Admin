@@ -70,3 +70,10 @@ The BelgiumMaps.OpenStreetMap package contains more datasets which can be used a
 This package can be found at https://github.com/jwijffels/BelgiumMaps.OpenStreetMap
 
 ![OSM example](inst/extdata/img/osm_industrial.png)
+
+
+## Support in geospatial analysis
+
+Need support in geospatial analysis or geospatial mapping. 
+Contact BNOSAC: http://www.bnosac.be
+
