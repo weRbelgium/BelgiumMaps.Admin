@@ -21,7 +21,7 @@ opts_chunk$set(out.extra='style="display:block; margin: auto"', fig.align="cente
 Introduction
 ------------
 
-The  **BelgiumMaps.Admin** package contains maps of administrative boundaries of Belgium extracted from OpenStreetMap ((C) OpenStreetMap contributors - http://www.openstreetmap.org/copyright). This data is available in the BE_OSM_ADMIN object.
+The  **BelgiumMaps.Admin** package contains maps of administrative boundaries of Belgium extracted on 2015/11/03 from OpenStreetMap ((C) OpenStreetMap contributors - http://www.openstreetmap.org/copyright). This data is available in the BE_OSM_ADMIN object.
 
 ```{r dataset}
 library(sp)
