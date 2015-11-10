@@ -72,7 +72,7 @@ This package can be found at https://github.com/jwijffels/BelgiumMaps.OpenStreet
 ![OSM example](inst/extdata/img/osm_industrial.png)
 
 
-## Need the administrative boundaries in another format?
+## Do you need these boundaries in another format?
 
 ```
 require(BelgiumMaps.Admin)
