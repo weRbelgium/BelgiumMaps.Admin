@@ -21,7 +21,7 @@ opts_chunk$set(out.extra='style="display:block; margin: auto"', fig.align="cente
 Introduction
 ------------
 
-The  **BelgiumMaps.Admin** package contains maps of administrative boundaries of Belgium extracted from OpenStreetMap. This data is available in the BE_OSM_ADMIN object.
+The  **BelgiumMaps.Admin** package contains maps of administrative boundaries of Belgium extracted from OpenStreetMap ((C) OpenStreetMap contributors - http://www.openstreetmap.org/copyright). This data is available in the BE_OSM_ADMIN object.
 
 ```{r dataset}
 library(sp)
@@ -51,5 +51,12 @@ plot(subset(BE_OSM_ADMIN, admin.level %in% "9"), main = "NISsections")
 Integrate with BelgiumStatistics
 ----------------------------
 The data also contains NIS codes which can be used to link against the data in the BelgiumStatistics package. This package can be found at https://github.com/jwijffels/BelgiumStatistics. Examples about this can be found in that package.
+
+
+More OpenStreetMap data about Belgium
+----------------------------
+Next to this data with administrative boundaries based on OpenStreetMap, another package called BelgiumMaps.OpenStreetMap is available which contains geospatial data of Belgium regarding landuse, natural, places, points, railways, roads and waterways, extracted from OpenStreetMap. More information: https://github.com/jwijffels/BelgiumMaps.OpenStreetMap
+
+
 
 
