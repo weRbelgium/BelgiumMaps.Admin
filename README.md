@@ -8,7 +8,10 @@ The BelgiumMaps.Admin R package allows R users to easily have data available con
 
 ## Installation
 
-The R package is currently only available through github. 
+The package is available at datatailor.be
+```
+install.packages("BelgiumMaps.Admin", repos = "http://www.datatailor.be/rcube", type = "source")
+```
 
 To install the latest version from github:
 ```
