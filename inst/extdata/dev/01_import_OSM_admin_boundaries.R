@@ -59,6 +59,6 @@ BE_OSM_ADMIN <- x
 names(BE_OSM_ADMIN)[which(names(BE_OSM_ADMIN) == "ID")] <- "OSM_ID"
 names(BE_OSM_ADMIN) <- make.names(tolower(names(BE_OSM_ADMIN)), allow_=FALSE)
 BE_OSM_ADMIN$admin.level <- as.integer(BE_OSM_ADMIN$admin.level)
-proj4string(BE_OSM_ADMIN) <- CRS("+proj=longlat +datum=WGS84")
-save(BE_OSM_ADMIN, file = "BE_OSM_ADMIN.RData", compress = "xz")
+#proj4string(BE_OSM_ADMIN) <- CRS("+proj=longlat +datum=WGS84")
+save(BE_OSM_ADMIN, file = "BE_OSM_ADMIN_mercator.RData", compress = "xz")
 
