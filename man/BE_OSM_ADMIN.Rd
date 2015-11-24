@@ -5,18 +5,28 @@
 \alias{BE_OSM_ADMIN}
 \title{BE_OSM_ADMIN: Administrative boundaries of Belgium based on OpenStreetMap}
 \description{
-BE_OSM_ADMIN: SpatialPolygonsDataFrame with administrative boundaries of Belgium. Extracted on 2015/11/03.
+BE_OSM_ADMIN: SpatialPolygonsDataFrame with administrative boundaries of Belgium. Extracted on 2015/11/19.
 It contains polygons of all administrative boundaries (levels 2, 4, 6, 7, 8, 9).
 Polygons are stored in degrees latitude/longitude (EPSG:4326 WGS 84).
 The data slot in the SpatialPolygonsDataFrame contains the following fields:
 
-The OpenStreetMap data of Belgium (belgium-latest.osm.pbf as of 2015-11-02T22:22:02Z) was imported in PostGIS using
-osm2pgsql and next with pgsql2shp, the data were converted to a shapefile.
+The OpenStreetMap data of Europe (europe-latest.osm.pbf as of 2015-11-18T22:23:02Z) was clipped
+with the bounding box 51.6, 49.4, 2.3, 6.5 using osmosis and the resulting file was imported with osm2pgsql in PostGIS
+and converted to a shapefile with pgsql2shp to obtain shape files of polygons of administrative boundaries of administrative levels 2, 4, 6, 7, 8, 9.
 
 SQL: select osm_id, boundary, admin_level, name, way_area, way, id, way_off, rel_off, parts, members, rels.tags from
 (select * from planet_osm_polygon where boundary = 'administrative' and admin_level IN ('2', '4', '6', '7', '8', '9')) polygon left outer join
 (select * from planet_osm_rels) as rels
 on -polygon.osm_id = rels.id;
+
+The data was further joined based on the INS code with aggregated TF_SOC_POP_STRUCT_2015 data from the
+BelgiumStatistics package and spatially grouped at different administrative levels which were
+retained from the TF_SOC_POP_STRUCT_2015 data namely: municipality / district / province / region / country
+as well as clipped to the Belgium boundary.
+All the administrative boundaries are made available in the BE_OSM_ADMIN dataset which can be found inside the package.
+
+Mark that Brussels is not considered a a province and that in this dataset at the province level the region level information is taken
+from the TF_SOC_POP_STRUCT_2015 dataset.
 
 \itemize{
 \item osm.id: the OpenStreetMap id of the polygon
@@ -46,9 +56,6 @@ on -polygon.osm_id = rels.id;
 \item tag.website: website tag, extracted using \code{tag_extractor} from the tags field of the planet_osm_rels table
 \item tag.is.in: is_in tag, extracted using \code{tag_extractor} from the tags field of the planet_osm_rels table
 }
-
-Mark that the OpenStreetMap data at administrative level 9 seems to be incomplete.
-Mark also that several polygons can exist for the same boundary.
 }
 \examples{
 \dontrun{
@@ -67,7 +74,7 @@ plot(subset(BE_OSM_ADMIN, admin.level \%in\% "9"))
 }
 \references{
 \url{http://wiki.openstreetmap.org/wiki/Tag:boundary=administrative},
-\url{http://download.geofabrik.de/europe/belgium.html},
+\url{http://download.geofabrik.de/europe.html},
 \url{https://en.wikipedia.org/wiki/World_Geodetic_System}
 }
 
