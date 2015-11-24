@@ -1,13 +1,13 @@
 Package: BelgiumMaps.Admin
 Type: Package
 Title: Maps with administrative boundaries (national, regions, provinces, districts, municipalities, nissections) of Belgium extracted from OpenStreetMap
-Description: 'BelgiumMaps.Admin' contains maps with administrative boundaries (national, regions, provinces, districts, municipalities, nissections) of Belgium extracted from OpenStreetMap.
+Description: 'BelgiumMaps.Admin' contains maps with administrative boundaries (national, regions, provinces, districts, municipalities, nissections) of Belgium extracted from OpenStreetMap and enriched with NIS information from StatBel.
 Maintainer: Jan Wijffels <jwijffels@bnosac.be>
-Author: c(person("Jan", "Wijffels", role = c("aut", "cre", "cph"), email = "jwijffels@bnosac.be"), person("BNOSAC", role = "cph"), person("OpenStreetMap contributors", role = "cph"), person("Geofabrik GmbH", role = "cph"))
-License: see file LICENSE
+Author: c(person("Jan", "Wijffels", role = c("aut", "cre", "cph"), email = "jwijffels@bnosac.be"), person("BNOSAC", role = "cph"), person("Statistics Belgium", role = "cph", email = "statbel.opendata@economie.fgov.be"), person("OpenStreetMap contributors", role = "cph"), person("Geofabrik GmbH", role = "cph"))
+License: see file LICENSE + see file LICENCE
 Copyright: see file COPYRIGHTS
-Version: 1.0
-URL: https://github.com/jwijffels/BelgiumMaps.Admin, http://www.bnosac.be, http://download.geofabrik.de/europe/belgium.html, http://download.geofabrik.de/europe/belgium-latest.osm.pbf
+Version: 1.1
+URL: https://github.com/jwijffels/BelgiumMaps.Admin, http://www.bnosac.be, http://download.geofabrik.de/europe.html, http://download.geofabrik.de/europe-latest.osm.pbf
 Date: 2015-11-05
 VignetteBuilder: knitr
 Depends:

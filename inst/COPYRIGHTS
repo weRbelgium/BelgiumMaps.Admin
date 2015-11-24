@@ -6,9 +6,12 @@ The R package and documentation itself is copyrighted by BNOSAC and the R packag
 
   (C) BNOSAC (www.bnosac.be/contact) 
   
-Contains OpenStreetMap data retrieved on 2015/11/03 from http://download.geofabrik.de/europe/belgium-latest.osm.pbf, this file was created and copyrighted by 
+Contains OpenStreetMap data retrieved on 2015/11/19 from http://download.geofabrik.de/europe/europe-latest.osm.pbf, this file was created and copyrighted by 
 
   (C) Geofabrik GmbH http://www.geofabrik.de/geofabrik/contact.html
 
+Contains data of administrative boundaries identifiers extracted from the BelgiumStatistics package (https://github.com/jwijffels/BelgiumStatistics), which are data created by Directie Statistiek - Statistics Belgium. See how enrichment is done in inst/extdata/dev/02_join_boundaries.R
+
+  (C) Algemene Directie Statistiek - Statistics Belgium, released under Licentie open data Algemene Directie Statistiek (see file LICENCE)
 
 
